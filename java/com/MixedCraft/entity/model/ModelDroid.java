@@ -31,8 +31,7 @@ public class ModelDroid extends ModelBase{
 		pillars = new ModelRenderer(this, 0, 20);
 		for(int x = -1; x <= 1; x += 2){
 			for(int z = -1; z <= 1; z += 2){
-				pillars.addBox(-1 + x * 3.995F, -1, -1 + z * 3.995F,
-						2, 8, 2);
+				pillars.addBox(-1 + x * 3.995F, -1, -1 + z * 3.995F, 2, 8, 2);
 			}
 		}
 		pillars.setRotationPoint(0, -6, 0);
@@ -49,16 +48,14 @@ public class ModelDroid extends ModelBase{
 		outerPanels = new ArrayList<ModelRenderer>();
 		for(float r = 0; r < Math.PI * 2; r += Math.PI / 2){
 			ModelRenderer side = new ModelRenderer(this, 0, 34);
-			side.addBox(-4, -2.5F, 5,
-					8, 5, 1);
+			side.addBox(-4, -2.5F, 5, 8, 5, 1);
 
 			side.setRotationPoint(0, 0, 0);
 			side.rotateAngleY = r;	
 			parts.add(side);
 
 			ModelRenderer panel = new ModelRenderer(this, 18, 34);
-			panel.addBox(-4, -0.5F, -0.5F,
-					8, 5, 1);
+			panel.addBox(-4, -0.5F, -0.5F, 8, 5, 1);
 
 			panel.setRotationPoint(0, -2, 6.5F);
 			side.addChild(panel);
@@ -66,8 +63,7 @@ public class ModelDroid extends ModelBase{
 
 			ModelRenderer panelOuter = new ModelRenderer(this, 18, 34);
 
-			panelOuter.addBox(-4, -0.5F, -0.5F,
-					8, 5, 1);
+			panelOuter.addBox(-4, -0.5F, -0.5F, 8, 5, 1);
 
 			panelOuter.setRotationPoint(0, 5, 0);
 			panel.addChild(panelOuter);

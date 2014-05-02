@@ -31,7 +31,7 @@ public class ItemModSeeds extends ItemsBase implements IPlantable {
 		else if (par2EntityPlayer.canPlayerEdit(par4, par5, par6, par7, par1ItemStack) && par2EntityPlayer.canPlayerEdit(par4, par5 + 1, par6, par7, par1ItemStack)) {
 			if (par3World.getBlock(par4, par5, par6).canSustainPlant(par3World, par4, par5, par6, ForgeDirection.UP, this) && par3World.isAirBlock(par4, par5 + 1, par6)) {
 				par3World.setBlock(par4, par5 + 1, par6, this.crop);
-				--par1ItemStack.stackSize;
+				par1ItemStack.stackSize--;
 				return true;
 			} else {
 				return false;

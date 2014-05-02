@@ -48,7 +48,7 @@ public class WandOfMagicMissile extends ItemBaseWand {
 
 		playSound("mob.endermen.portal",world,playerEntity);
 
-		if (!world.isRemote && ManaHelper.useBar(playerEntity, 10)) {
+		if (!world.isRemote && ManaHelper.useBar(10)) {
 			world.spawnEntityInWorld(new MagicMissile(world, playerEntity,  2.0F));
 		}
 		return srcItemStack;

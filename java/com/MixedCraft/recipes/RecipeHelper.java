@@ -24,7 +24,6 @@ public class RecipeHelper {
 	private static ItemStack b;
 	
 	public static void Shaped(){
-				
 		GameRegistry.addRecipe(new ItemStack(ItemHelper.FlashDrive, 1), new Object[] {" TT", "ICT", "II ", 'T', ItemHelper.TinIngot,'C', ItemHelper.CopperIngot, 'I', Items.iron_ingot});
 		GameRegistry.addRecipe(new ItemStack(BlockHelper.SolarPanel, 1), new Object[] {"TCT", "IRI", "III", 'T', ItemHelper.TinIngot,'C', ItemHelper.CopperIngot, 'I', Blocks.iron_block, 'R', Items.redstone});
 		GameRegistry.addRecipe(new ItemStack(ItemHelper.GoldHandsaw, 1), new Object[] {"SSS", "GGS", "   ", 'S', Items.stick, 'G', Items.gold_ingot});
@@ -74,14 +73,13 @@ public class RecipeHelper {
 		GameRegistry.addRecipe(new ItemStack(ItemHelper.wandMining, 1), new Object[] {"S", "I", "I", 'S', Items.diamond_pickaxe, 'I', Blocks.gold_block});
 		GameRegistry.addRecipe(new ItemStack(ItemHelper.wandTeleport, 1), new Object[] {"S", "I", "I", 'S', Items.ender_eye, 'I', Blocks.gold_block});
 		GameRegistry.addRecipe(new ItemStack(ItemHelper.Wand, 1), new Object[] {"S", "G", "I", 'S', Items.feather, 'I', Blocks.diamond_block, 'G', Blocks.gold_block});
-		GameRegistry.addRecipe(new ItemStack(Blocks.furnace, 1), new Object[] {"SSS", "S S", "SSS", 'S', BlockHelper.FlyLightStone});
-		GameRegistry.addRecipe(new ItemStack(Items.stick, 16), new Object[] {"L", "L", 'L', BlockHelper.FlylightLog});
+		GameRegistry.addRecipe(new ItemStack(Blocks.furnace, 1), new Object[] {"SSS", "S S", "SSS", 'S', BlockHelper.flylightStone});
+		GameRegistry.addRecipe(new ItemStack(Items.stick, 16), new Object[] {"L", "L", 'L', BlockHelper.flylightLog});
 		GameRegistry.addRecipe(new ItemStack(ItemHelper.battery, 1, ItemHelper.battery.getMaxDamage()), new Object[] {"IRI", "IRI", "IRI", 'I', Items.iron_ingot, 'R', Items.redstone});
 
 	}
 
 	public static void BigShapedCrafting(){
-		
 		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(Items.bow, 1), new Object[] {" II", "I S", "I S", "I S", " II", 'I', Items.stick, 'S', Items.string});
 		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(ItemHelper.TNTBow, 1), new Object[] {" II", "I S", "I S", "I S", " II", 'I', Blocks.tnt, 'S', Items.string});
 		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(ItemHelper.LightningBow, 1), new Object[] {" II", "I S", "I S", "I S", " II", 'I', Items.diamond, 'S', Items.string});
@@ -138,8 +136,8 @@ public class RecipeHelper {
 		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(ItemHelper.wandMissile, 1), new Object[] {"S", "B", "I", 'S', Items.arrow, 'B', Items.bow, 'I', Blocks.gold_block});
 		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(ItemHelper.wandMining, 1), new Object[] {"S", "I", "I", 'S', Items.diamond_pickaxe, 'I', Blocks.gold_block});
 		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(ItemHelper.wandTeleport, 1), new Object[] {"S", "I", "I", 'S', Items.ender_eye, 'I', Blocks.gold_block});
-		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(Blocks.furnace, 1), new Object[] {"SSS", "S S", "SSS", 'S', BlockHelper.FlyLightStone});
-		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(Items.stick, 16), new Object[] {"L", "L", 'L', BlockHelper.FlylightLog});
+		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(Blocks.furnace, 1), new Object[] {"SSS", "S S", "SSS", 'S', BlockHelper.flylightStone});
+		CraftingBigManager.getInstance().addShapedRecipe(new ItemStack(Items.stick, 16), new Object[] {"L", "L", 'L', BlockHelper.flylightLog});
 	}
 
 	public static void BigShapelessCrafting(){
@@ -161,13 +159,11 @@ public class RecipeHelper {
 	}
 
 	public static void Smelting(){
-		
 		GameRegistry.addSmelting(BlockHelper.SilverOre, new ItemStack(ItemHelper.SilverIngot, 1), 0);
 		GameRegistry.addSmelting(BlockHelper.TinOre, new ItemStack(ItemHelper.TinIngot, 1), 0);
 		GameRegistry.addSmelting(BlockHelper.CopperOre, new ItemStack(ItemHelper.CopperIngot, 1), 0);
 		GameRegistry.addSmelting(Items.rotten_flesh, new ItemStack(Items.leather, 1), 0);
-		GameRegistry.addSmelting(BlockHelper.Iron, new ItemStack(Items.iron_ingot, 1), 0);
-		GameRegistry.addSmelting(BlockHelper.FlylightLog, new ItemStack(Items.coal, 1), 0);
+		GameRegistry.addSmelting(BlockHelper.iron, new ItemStack(Items.iron_ingot, 1), 0);
+		GameRegistry.addSmelting(BlockHelper.flylightLog, new ItemStack(Items.coal, 1), 0);
 	}
-
 }

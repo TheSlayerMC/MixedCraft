@@ -126,7 +126,7 @@ public class WorldGenMixedMinable implements IWorldGenerator{
 			int randPosY = rand.nextInt(150);
 			int randPosZ = chunkZ + rand.nextInt(16);
 
-			(new WorldGenMinable(BlockHelper.SlowSand, 25, Blocks.sand)).generate(world, rand, randPosX, randPosY, randPosZ);		
+			(new WorldGenMinable(BlockHelper.slowSand, 25, Blocks.sand)).generate(world, rand, randPosX, randPosY, randPosZ);		
 		}	
 	}
 }

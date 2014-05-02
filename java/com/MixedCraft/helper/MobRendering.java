@@ -34,10 +34,7 @@ public class MobRendering {
 		
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTable.class, new RenderTable());
         MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockHelper.Table), new ItemTableRenderer());
-        
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityWindmill.class, new TileEntityWindmillSpecial());
-        //MinecraftForgeClient.registerItemRenderer(ItemHelper.itemWindmill, new ItemWindmillRenderer());
-        
+                
         RenderingRegistry.registerEntityRenderingHandler(EntityLightningArrow.class, new RenderLightningArrow());
 		RenderingRegistry.registerEntityRenderingHandler(EntityTNTArrow.class, new RenderTNTArrow());
 	}

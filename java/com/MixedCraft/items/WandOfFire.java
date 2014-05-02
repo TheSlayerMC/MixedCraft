@@ -65,7 +65,7 @@ public class WandOfFire extends ItemBaseWand  {
 
 		playSound("fireworks.launch",world,playerEntity);
 
-		if (!world.isRemote && ManaHelper.useBar(playerEntity, 60))
+		if (!world.isRemote && ManaHelper.useBar(60))
 		{
 			double vecX = (double)(-MathHelper.sin(playerEntity.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(playerEntity.rotationPitch / 180.0F * (float)Math.PI));
 			double vecY = (double)(-MathHelper.sin(playerEntity.rotationPitch / 180.0F * (float)Math.PI));

@@ -12,7 +12,7 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.MapGenBase;
 import net.minecraft.world.gen.MapGenCaves;
 
-public class FlyLightGenCaves extends MapGenBase {
+public class FlylightGenCaves extends MapGenBase {
 
     protected void func_151542_a(long p_151542_1_, int p_151542_3_, int p_151542_4_, Block[] p_151542_5_, double p_151542_6_, double p_151542_8_, double p_151542_10_)
     {
@@ -284,7 +284,7 @@ public class FlyLightGenCaves extends MapGenBase {
         Block filler = (isExceptionBiome(biome) ? Blocks.dirt  : biome.fillerBlock);
         Block block  = data[index];
 
-        if (block == BlockHelper.FlyLightStone || block == filler || block == top)
+        if (block == BlockHelper.flylightStone || block == filler || block == top)
         {
             if (y < 10)
             {

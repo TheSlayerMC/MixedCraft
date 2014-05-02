@@ -10,20 +10,16 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
 public class DeathSkull extends EntityWitherSkull {
-	public static float damage = 10f;
 
-	public DeathSkull(World par1World)
-	{
+	public DeathSkull(World par1World) {
 		super(par1World);
 	}
 
-	public DeathSkull(World par1World, EntityLivingBase par2EntityLivingBase, double vX, double vY, double vZ)
-	{
+	public DeathSkull(World par1World, EntityLivingBase par2EntityLivingBase, double vX, double vY, double vZ) {
 		super(par1World, par2EntityLivingBase, vX, vY, vZ);
 	}
 
-	public DeathSkull(World par1World, EntityLivingBase par2EntityLivingBase, double posX, double posY, double posZ, double vX, double vY, double vZ)
-	{
+	public DeathSkull(World par1World, EntityLivingBase par2EntityLivingBase, double posX, double posY, double posZ, double vX, double vY, double vZ) {
 		super(par1World, par2EntityLivingBase, vX, vY, vZ);
 		this.setPosition(posX, posY, posZ);
 		Double d3 = (double)MathHelper.sqrt_double(vX * vX + vY * vY + vZ * vZ);
@@ -33,27 +29,20 @@ public class DeathSkull extends EntityWitherSkull {
 	}
 
 
-	public DeathSkull(World par1World, double par2, double par4, double par6, double par8, double par10, double par12)
-	{
+	public DeathSkull(World par1World, double par2, double par4, double par6, double par8, double par10, double par12) {
 		super(par1World, par2, par4, par6, par8, par10, par12);
 	}
 
-	protected void onImpact(MovingObjectPosition par1MovingObjectPosition)
-	{
-		if (!this.worldObj.isRemote)
-		{
-			if (par1MovingObjectPosition.entityHit != null)
-			{
+	protected void onImpact(MovingObjectPosition par1MovingObjectPosition) {
+		if (!this.worldObj.isRemote) {
+			if (par1MovingObjectPosition.entityHit != null) {
 
 				par1MovingObjectPosition.entityHit.attackEntityFrom(DamageSource.magic, 20.0F);
 
-
-				if (par1MovingObjectPosition.entityHit instanceof EntityLivingBase)
-				{
+				if (par1MovingObjectPosition.entityHit instanceof EntityLivingBase) {
 					byte witherSeconds = 10;
 
-					if (witherSeconds > 0)
-					{
+					if (witherSeconds > 0) {
 						((EntityLivingBase)par1MovingObjectPosition.entityHit).addPotionEffect(new PotionEffect(Potion.wither.id, 20 * witherSeconds, 1));
 					}
 				}
@@ -63,5 +52,4 @@ public class DeathSkull extends EntityWitherSkull {
 			this.setDead();
 		}
 	}
-
 }

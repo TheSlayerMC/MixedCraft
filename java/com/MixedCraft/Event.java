@@ -1,44 +1,26 @@
 package com.MixedCraft;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
+import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 
 import com.MixedCraft.blocks.FlylightSapling;
-import com.MixedCraft.gui.GuiManaBar;
 import com.MixedCraft.helper.ManaHelper;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemPickupEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerChangedDimensionEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerLoggedOutEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 
 public class Event {	
 
 	@SubscribeEvent
 	public void bonemealUsed(BonemealEvent event) {
-		if(event.world.getBlock(event.x, event.y, event.z) == BlockHelper.FlylightSapling) {
-			((FlylightSapling)BlockHelper.FlylightSapling).growTree(event.world, event.x, event.y, event.z, event.world.rand);
+		if(event.world.getBlock(event.x, event.y, event.z) == BlockHelper.flylightSapling) {
+			((FlylightSapling)BlockHelper.flylightSapling).growTree(event.world, event.x, event.y, event.z, event.world.rand);
 		}
-	}
-
-	@SubscribeEvent
-	public void onRenderOverlay(RenderGameOverlayEvent e){
-		if(!Minecraft.getMinecraft().playerController.shouldDrawHUD() || e.isCancelable() || e.type != ElementType.EXPERIENCE) 
-			return;
-		GuiManaBar.draw();
 	}
 
 	@SubscribeEvent
@@ -55,22 +37,29 @@ public class Event {
 	}
 
 	@SubscribeEvent
-	public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event){
-		ManaHelper.add(event.player.getDisplayName());
+	public void constructed(EntityConstructing ev){
+		if(ev.entity instanceof EntityPlayer){
+			
+		}
+	}
+	
+	@SubscribeEvent
+	public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event){ 
+		ManaHelper.setBarValue(200);
 	}
 
 	@SubscribeEvent
-	public void onPlayerLoggedOut(PlayerEvent.PlayerLoggedOutEvent event){
-		ManaHelper.remove(event.player.getDisplayName());
+	public void onPlayerLoggedOut(PlayerEvent.PlayerLoggedOutEvent event){ 
+		ManaHelper.setBarValue(0);
 	}
 
 	@SubscribeEvent
-	public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event){
-		ManaHelper.add(event.player.getDisplayName());
+	public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event){ 
+		ManaHelper.setBarValue(200);
 	}
 
 	@SubscribeEvent
 	public void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event){
-		ManaHelper.add(event.player.getDisplayName());
+		ManaHelper.setBarValue(200);
 	}
 }

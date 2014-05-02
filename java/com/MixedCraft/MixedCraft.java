@@ -64,13 +64,13 @@ public class MixedCraft extends HelperHandler {
 		proxy.preInit(event);
 		proxy.registerRenderInformation();
 		event.getModMetadata().credits = "The_Slayer ~ The programmer, DrCyano ~ The programmer for the Magic Wands mod";
-		event.getModMetadata().description = "MixedCraft is a mod made by The_Slayer, it's still in the making";
+		event.getModMetadata().description = "MixedCraft is a mod made by The_Slayer, it's still in the making!";
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		proxy.init(event);
-		proxy.registerCape();
+		//proxy.registerCape();
 	}	
 
 	@EventHandler

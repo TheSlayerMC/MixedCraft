@@ -44,7 +44,7 @@ public class WandOfHealing extends ItemBaseWand {
 
 		ItemStack hp = new ItemStack(Items.potionitem);
 		hp.setItemDamage(0x0005 + 0x4000);
-		if (!world.isRemote && ManaHelper.useBar(playerEntity, 40)) {
+		if (!world.isRemote && ManaHelper.useBar(40)) {
 			world.spawnEntityInWorld(new EntityPotion(world, playerEntity,  hp));
 		}
 

@@ -4,6 +4,7 @@ import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.EnumChatFormatting;
 
 public class MixedAPI {
+	
 	public static ChatComponentTranslation addChatMessage(EnumChatFormatting color, String str, Object... args) {
 		ChatComponentTranslation ret = new ChatComponentTranslation(str, args);
 		ret.getChatStyle().setColor(color);
@@ -15,5 +16,4 @@ public class MixedAPI {
 		ret.getChatStyle().setColor(EnumChatFormatting.WHITE);
 		return ret;
 	}
-
 }

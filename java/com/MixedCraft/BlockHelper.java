@@ -42,58 +42,55 @@ public class BlockHelper extends HelperHandler{
 	public static final Block DiamondFurnaceOff 				= new BlockDiamondFurnace(false).setName("DiamondFurnaceOff");
 	public static final Block DiamondFurnaceOn 					= new BlockDiamondFurnace(true).setName("DiamondFurnaceOn").setLightLevel(0.875F);
 
-    public static final BlockFlylightPortal FlyLightPortal 		= (BlockFlylightPortal) new BlockFlylightPortal().setName("flylightPortal").setBlockUnbreakable();
-    public static final Block FlyLightGrass 					= new BlockFlyLightGrass().setName("FlyLightGrass").setStepSound(Block.soundTypeGrass);
-    public static final Block FlyLightDirt 						= new ModDirt().setName("FlyLightDirt").setLightLevel(0.8F).setHardness(1.0F).setStepSound(Block.soundTypeGravel);
-    public static final Block FlyLightStone 					= new ModBlock().setName("FlyLightStone").setHardness(3.0F).setLightLevel(0.6F).setStepSound(Block.soundTypeStone);
-    public static final Block FlyLightOre 						= new ModBlock().setName("FlyLightOre").setLightLevel(0.6F).setHardness(3.0F).setStepSound(Block.soundTypeStone);
-    public static final Block ModFire						    = new ModFire().setName("modFire");
-	
+	public static final BlockFlylightPortal flylightPortal 		= (BlockFlylightPortal) new BlockFlylightPortal().setName("flylightPortal").setBlockUnbreakable();
+	public static final Block flylightGrass 					= new BlockFlylightGrass().setName("flylightGrass").setStepSound(Block.soundTypeGrass);
+	public static final Block flylightDirt 						= new ModDirt().setName("flylightDirt").setLightLevel(0.8F).setHardness(1.0F).setStepSound(Block.soundTypeGravel);
+	public static final Block flylightStone 					= new ModBlock().setName("flylightStone").setHardness(3.0F).setLightLevel(0.6F).setStepSound(Block.soundTypeStone);
+	public static final Block flylightOre 						= new ModBlock().setName("flylightOre").setLightLevel(0.6F).setHardness(3.0F).setStepSound(Block.soundTypeStone);
+	public static final Block ModFire						    = new ModFire().setName("modFire");
+
 	public static final Block flashing 							= new ModBlock().setName("flashing").setHardness(3.5F).setStepSound(Block.soundTypeMetal).setLightLevel(0.875F);
 	//public static final Block House1 								= new BlockHouse1().setHardness(3.5F).setStepSound(Block.soundTypeMetal).setName("House1").setLightLevel(0.875F);
-    public static final Block SlowSand 							= new BlockSinkSand().setName("slowsand");
+	public static final Block slowSand 							= new BlockSinkSand().setName("slowSand");
 
-    public static final Block ChocolateCake 					= new BlockChocolateCake().setName("chocolateCakeBlock");
-    public static final Block ChocolateCrop 					= new BlockChocolateCrop().setName("ChocolateCrop");
-    
-    public static final Block GoldFurnaceOff 					= new GoldFurnace(false).setName("goldFurnace");
-    public static final Block GoldFurnaceOn 					= new GoldFurnace(true).setName("goldFurnaceOn");
-    
-    public static final Block Flower1 							= new ModFlower().setName("flylightFlower_1");
-    public static final Block Flower2 							= new ModFlower().setName("flylightFlower_2");
-    public static final Block FlylightLog 						= new ModLog().setName("flylightLog");
-    public static final Block FlylightLeaves 					= new ModLeaves().setName("flylightLeaves");
-    public static final Block FlylightFern 						= new ModTallGrass().setName("flylightFern");
-    public static final Block FlylightGrass 					= new ModTallGrass().setName("flylightGrass");
-    public static final Block FlylightCane 						= new FlylightSugarCane().setName("flylightSugarCane");
-    public static final Block FlylightSapling 					= new FlylightSapling().setName("flylightSapling");
-    public static final Block Water 							= new ModWater().setName("flylightWater");
-    public static final Block Vine 								= new ModVine().setName("flylightVine");
-    
-    public static final Block Iron 								= new ModOre().setName("ironOre");
-    public static final Block Gold 								= new ModOre().setName("goldOre");
-    public static final Block Lapis 							= new ModOre().setName("lapisOre");
-    public static final Block Redstone 							= new ModOre().setName("redstoneOre");
-    public static final Block Diamond 							= new ModOre().setName("diamondOre");
-    public static final Block Coal 								= new ModOre().setName("coalOre");
-    public static final Block Emerald 							= new ModOre().setName("emeraldOre"); 
-    
-    public static final Block PoweredFurnace 					= new BlockPoweredFurnace(false).setName("powerFurnace");
-    public static final Block PoweredFurnaceOn				    = new BlockPoweredFurnace(true).setName("powerFurnaceOn");
-    
-    public static final Block windmill 							= new BlockWindmill().setName("windmillBlock");
-    public static final Block windmillBase 						= new BlockMindmillBase().setName("windmillBase");
-    
-	public static void addOre(){
+	public static final Block chocolateCake 					= new BlockChocolateCake().setName("chocolateCakeBlock");
+	public static final Block chocolateCrop 					= new BlockChocolateCrop().setName("ChocolateCrop");
+
+	public static final Block goldFurnaceOff 					= new GoldFurnace(false).setName("goldFurnace");
+	public static final Block goldFurnaceOn 					= new GoldFurnace(true).setName("goldFurnaceOn");
+
+	public static final Block flower1 							= new ModFlower().setName("cyanFlylightFlower");
+	public static final Block flower2 							= new ModFlower().setName("blueFlylightFlower");
+	public static final Block flylightLog 						= new ModLog().setName("flylightLog");
+	public static final Block flylightLeaves 					= new ModLeaves().setName("flylightLeaves");
+	public static final Block flylightFern 						= new ModTallGrass().setName("flylightFern");
+	public static final Block FlylightTallGrass 				= new ModTallGrass().setName("flylightTallGrass");
+	public static final Block flylightCane 						= new FlylightSugarCane().setName("flylightSugarCane");
+	public static final Block flylightSapling 					= new FlylightSapling().setName("flylightSapling");
+	public static final Block water 							= new ModWater().setName("flylightWater");
+	public static final Block vine 								= new ModVine().setName("flylightVine");
+
+	public static final Block iron 								= new ModOre().setName("ironOre");
+	public static final Block gold 								= new ModOre().setName("goldOre");
+	public static final Block lapis 							= new ModOre().setName("lapisOre");
+	public static final Block redstone 							= new ModOre().setName("redstoneOre");
+	public static final Block diamond 							= new ModOre().setName("diamondOre");
+	public static final Block coal 								= new ModOre().setName("coalOre");
+	public static final Block emerald 							= new ModOre().setName("emeraldOre"); 
+
+	public static final Block poweredFurnace 					= new BlockPoweredFurnace(false).setName("powerFurnace");
+	public static final Block poweredFurnaceOn				    = new BlockPoweredFurnace(true).setName("powerFurnaceOn");
+
+	public static void addOres(){
 		OreDictionary.registerOre("oreCopper", CopperOre);
 		OreDictionary.registerOre("oreTin", TinOre);
 		OreDictionary.registerOre("oreSilver", SilverOre);
-		OreDictionary.registerOre("oreFlyIron", Iron);
-		OreDictionary.registerOre("oreFlyGold", Gold);
-		OreDictionary.registerOre("oreFlyLapis", Lapis);
-		OreDictionary.registerOre("oreFlyRedstone", Redstone);
-		OreDictionary.registerOre("oreFlyDiamond", Diamond);
-		OreDictionary.registerOre("oreFlyCoal", Coal);
-		OreDictionary.registerOre("oreFlyEmerald", Emerald);
+		OreDictionary.registerOre("oreFlylightIron", iron);
+		OreDictionary.registerOre("oreFlylightGold", gold);
+		OreDictionary.registerOre("oreFlylightLapis", lapis);
+		OreDictionary.registerOre("oreFlylightRedstone", redstone);
+		OreDictionary.registerOre("oreFlylightDiamond", diamond);
+		OreDictionary.registerOre("oreFlylightCoal", coal);
+		OreDictionary.registerOre("oreFlylightEmerald", emerald);
 	}
 }

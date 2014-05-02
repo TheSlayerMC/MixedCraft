@@ -41,11 +41,9 @@ public class WandOfDeath extends ItemBaseWand {
 	}
 
 	@Override 
-	public ItemStack onEaten (ItemStack srcItemStack, World world, EntityPlayer playerEntity)
-	{ 
+	public ItemStack onEaten (ItemStack srcItemStack, World world, EntityPlayer playerEntity) { 
 
-		if (!playerEntity.capabilities.isCreativeMode)
-		{
+		if (!playerEntity.capabilities.isCreativeMode) {
 			if(isOutOfCharge(srcItemStack)){
 
 				playSound(noChargeAttackSound,world,playerEntity);
@@ -54,10 +52,9 @@ public class WandOfDeath extends ItemBaseWand {
 			srcItemStack.damageItem(getUseCost(), playerEntity);
 		}
 
-		playSound("mob.endermen.portal",world,playerEntity);
+		playSound("mob.endermen.portal", world, playerEntity);
 
-		if (!world.isRemote && ManaHelper.useBar(playerEntity, 100))
-		{
+		if (!world.isRemote && ManaHelper.useBar(100)) {
 			double vecX = (double)(-MathHelper.sin(playerEntity.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(playerEntity.rotationPitch / 180.0F * (float)Math.PI));
 			double vecY = (double)(-MathHelper.sin(playerEntity.rotationPitch / 180.0F * (float)Math.PI));
 			double vecZ = (double)( MathHelper.cos(playerEntity.rotationYaw / 180.0F * (float)Math.PI) * MathHelper.cos(playerEntity.rotationPitch / 180.0F * (float)Math.PI));
@@ -65,7 +62,7 @@ public class WandOfDeath extends ItemBaseWand {
 			double deltaX = (double)(-MathHelper.sin(playerEntity.rotationYaw / 180.0F * (float)Math.PI));
 			double deltaZ = (double)( MathHelper.cos(playerEntity.rotationYaw / 180.0F * (float)Math.PI));
 
-			world.spawnEntityInWorld(new DeathSkull(world, playerEntity,playerEntity.posX+deltaX,playerEntity.posY+1,playerEntity.posZ+deltaZ,  vecX, vecY, vecZ));
+			world.spawnEntityInWorld(new DeathSkull(world, playerEntity, playerEntity.posX + deltaX, playerEntity.posY + 1, playerEntity.posZ + deltaZ, vecX, vecY, vecZ));
 		}
 		return srcItemStack;
 	}

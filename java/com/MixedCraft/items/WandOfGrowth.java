@@ -55,7 +55,7 @@ public class WandOfGrowth extends ItemBaseWand {
 		Block target = world.getBlock(targetX, targetY, targetZ);
 		ItemStack fauxItemStack = new ItemStack(Items.dye);
 		
-		if(target == Blocks.cactus && ManaHelper.useBar(playerEntity, 10)){
+		if(target == Blocks.cactus && ManaHelper.useBar(10)){
 
 			int y = targetY + 1;
 			while(world.getBlock(targetX, y, targetZ) == Blocks.cactus){
@@ -65,7 +65,7 @@ public class WandOfGrowth extends ItemBaseWand {
 				world.setBlock(targetX, y, targetZ, Blocks.cactus);
 			}
 			return true;
-		} else if(target == Blocks.reeds && ManaHelper.useBar(playerEntity, 10)){
+		} else if(target == Blocks.reeds && ManaHelper.useBar(10)){
 
 			int y = targetY+1;
 			while(world.getBlock(targetX, y, targetZ) == Blocks.reeds){
@@ -76,11 +76,11 @@ public class WandOfGrowth extends ItemBaseWand {
 				world.setBlock(targetX, y, targetZ, Blocks.reeds);
 			}
 			return true;
-		} else if(target == Blocks.cobblestone && ManaHelper.useBar(playerEntity, 10)){
+		} else if(target == Blocks.cobblestone && ManaHelper.useBar(10)){
 
 			world.setBlock(targetX, targetY, targetZ, Blocks.mossy_cobblestone);
 			return true;
-		} else if(target == Blocks.stonebrick && ManaHelper.useBar(playerEntity, 10)){
+		} else if(target == Blocks.stonebrick && ManaHelper.useBar(10)){
 			if( world.getBlockMetadata(targetX, targetY, targetZ) == 0){
 
 				world.setBlockMetadataWithNotify(targetX, targetY, targetZ, 1, 3);

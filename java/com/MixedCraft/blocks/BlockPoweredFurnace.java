@@ -27,6 +27,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockPoweredFurnace extends BlockModContainer {
+	
 	private final Random PowerFurnaceRand = new Random();
 	private final boolean isActive;
 	private static boolean keepPowerFurnaceInventory;
@@ -45,7 +46,7 @@ public class BlockPoweredFurnace extends BlockModContainer {
 	}
 
 	public Item getItemDropped(int par1, Random par2Random, int par3) {
-		return Item.getItemFromBlock(BlockHelper.PoweredFurnace);
+		return Item.getItemFromBlock(BlockHelper.poweredFurnace);
 	}
 
 	public void onBlockAdded(World par1World, int par2, int par3, int par4) {
@@ -108,9 +109,9 @@ public class BlockPoweredFurnace extends BlockModContainer {
 		keepPowerFurnaceInventory = true;
 
 		if (par0) {
-			par1World.setBlock(par2, par3, par4, BlockHelper.PoweredFurnaceOn);
+			par1World.setBlock(par2, par3, par4, BlockHelper.poweredFurnaceOn);
 		} else {
-			par1World.setBlock(par2, par3, par4, BlockHelper.PoweredFurnace);
+			par1World.setBlock(par2, par3, par4, BlockHelper.poweredFurnace);
 		}
 
 		keepPowerFurnaceInventory = true;
@@ -247,6 +248,6 @@ public class BlockPoweredFurnace extends BlockModContainer {
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World par1World, int par2, int par3, int par4)
 	{
-		return Item.getItemFromBlock(BlockHelper.PoweredFurnace);
+		return Item.getItemFromBlock(BlockHelper.poweredFurnace);
 	}
 }

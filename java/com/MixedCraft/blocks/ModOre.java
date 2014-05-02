@@ -23,35 +23,35 @@ public class ModOre extends ModBlock{
 	@Override
 	public Item getItemDropped(int par1, Random par2Random, int par3)
 	{
-		if(this == BlockHelper.Coal){
+		if(this == BlockHelper.coal){
 			return Items.coal;
 		}
-		if(this == BlockHelper.Diamond){
+		if(this == BlockHelper.diamond){
 			return Items.diamond;
 		}
-		if(this == BlockHelper.Lapis){
+		if(this == BlockHelper.lapis){
 			return Items.dye;
 		}
-		if(this == BlockHelper.Emerald){
+		if(this == BlockHelper.emerald){
 			return Items.emerald;
 		}
-		if(this == BlockHelper.Iron){
+		if(this == BlockHelper.iron){
 			return Item.getItemFromBlock(this);
 		}
-		if(this == BlockHelper.Gold){
+		if(this == BlockHelper.gold){
 			return Item.getItemFromBlock(this);
 		}
-		if(this == BlockHelper.Redstone){
+		if(this == BlockHelper.redstone){
 			return Items.redstone;
 		}
 		return null;
 	}
 
 	public int quantityDropped(Random par1Random) {
-		if(this == BlockHelper.Lapis){
-			return this == BlockHelper.Lapis ? 4 + par1Random.nextInt(5) : 1;
+		if(this == BlockHelper.lapis){
+			return this == BlockHelper.lapis ? 4 + par1Random.nextInt(5) : 1;
 		}
-		if(this == BlockHelper.Redstone){
+		if(this == BlockHelper.redstone){
 			return 4 + par1Random.nextInt(2);
 		}
 		return 1;
@@ -65,19 +65,19 @@ public class ModOre extends ModBlock{
 		{
 			int j1 = 0;
 
-			if (this == BlockHelper.Coal)
+			if (this == BlockHelper.coal)
 			{
 				j1 = MathHelper.getRandomIntegerInRange(rand, 0, 2);
 			}
-			else if (this == BlockHelper.Diamond)
+			else if (this == BlockHelper.diamond)
 			{
 				j1 = MathHelper.getRandomIntegerInRange(rand, 3, 7);
 			}
-			else if (this == BlockHelper.Emerald)
+			else if (this == BlockHelper.emerald)
 			{
 				j1 = MathHelper.getRandomIntegerInRange(rand, 3, 7);
 			}
-			else if (this == BlockHelper.Lapis)
+			else if (this == BlockHelper.lapis)
 			{
 				j1 = MathHelper.getRandomIntegerInRange(rand, 2, 5);
 			}
@@ -108,6 +108,6 @@ public class ModOre extends ModBlock{
 
 	public int damageDropped(int idk)
 	{
-		return this == BlockHelper.Lapis ? 4 : 0;
+		return this == BlockHelper.lapis ? 4 : this == BlockHelper.redstone ? 4 : 0;
 	}
 }

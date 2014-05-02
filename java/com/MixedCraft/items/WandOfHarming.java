@@ -43,7 +43,7 @@ public class WandOfHarming extends ItemBaseWand {
 
 		ItemStack hp = new ItemStack(Items.potionitem, 5);
 		hp.setItemDamage(5149388);
-		if (!world.isRemote && ManaHelper.useBar(playerEntity, 40))
+		if (!world.isRemote && ManaHelper.useBar(40))
 		{
 			world.spawnEntityInWorld(new EntityPotion(world, playerEntity, hp));
 		}

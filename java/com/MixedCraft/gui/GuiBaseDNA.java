@@ -1,5 +1,7 @@
 package com.MixedCraft.gui;
 
+import org.lwjgl.opengl.GL11;
+
 import com.MixedCraft.blocks.container.ContainerBigCrafting;
 import com.MixedCraft.blocks.container.DNAContainer;
 import com.MixedCraft.handler.GuiResourceLocation;
@@ -19,6 +21,7 @@ public class GuiBaseDNA extends GuiContainer{
 	}
 
 	public void drawGuiContainerBackgroundLayer(float par1, int par2, int par3) {
+		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 		this.mc.getTextureManager().bindTexture(GuiResourceLocation.DNA);
 		this.xSize = 238;
 		this.ySize = 247;

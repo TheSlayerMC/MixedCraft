@@ -52,7 +52,7 @@ public class ItemTorchBow extends ItemsBase
 
 			player.inventory.consumeInventoryItem(Item.getItemFromBlock(Blocks.torch));
 			if(!par2World.isRemote)
-			par2World.spawnEntityInWorld(entityarrow);
+				par2World.spawnEntityInWorld(entityarrow);
 		}
 	}
 

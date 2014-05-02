@@ -52,7 +52,7 @@ public class GoldFurnace extends BlockModContainer
 
 	public Item getItemDropped(int par1, Random par2Random, int par3)
 	{
-		return Item.getItemFromBlock(BlockHelper.GoldFurnaceOff);
+		return Item.getItemFromBlock(BlockHelper.goldFurnaceOff);
 	}
 
 	public void onBlockAdded(World par1World, int par2, int par3, int par4)
@@ -131,11 +131,11 @@ public class GoldFurnace extends BlockModContainer
 
 		if (par0)
 		{
-			par1World.setBlock(par2, par3, par4, BlockHelper.GoldFurnaceOn);
+			par1World.setBlock(par2, par3, par4, BlockHelper.goldFurnaceOn);
 		}
 		else
 		{
-			par1World.setBlock(par2, par3, par4, BlockHelper.GoldFurnaceOff);
+			par1World.setBlock(par2, par3, par4, BlockHelper.goldFurnaceOff);
 		}
 
 		keepGoldFurnaceInventory = false;
@@ -284,6 +284,6 @@ public class GoldFurnace extends BlockModContainer
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World par1World, int par2, int par3, int par4)
 	{
-		return Item.getItemFromBlock(BlockHelper.GoldFurnaceOff);
+		return Item.getItemFromBlock(BlockHelper.goldFurnaceOff);
 	}
 }

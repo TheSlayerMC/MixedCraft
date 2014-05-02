@@ -219,14 +219,6 @@ public class LangRegistry {
 			char secondLetter = name.charAt(1);
 			char thirdLetter = name.charAt(2);
 			int numChars = 0;
-			if (Character.isLowerCase(firstLetter)) 
-				firstLetter = Character.toUpperCase(firstLetter);
-
-			if (Character.isLowerCase(secondLetter)) 
-				secondLetter = Character.toUpperCase(secondLetter);
-
-			if (Character.isLowerCase(thirdLetter)) 
-				thirdLetter = Character.toUpperCase(thirdLetter);
 
 			String inGame = name.substring(1);
 			for (int p = 0; p < name.length(); p++) {
@@ -245,8 +237,7 @@ public class LangRegistry {
 					}
 				}
 			}
-			String finalName = firstLetter + secondLetter + thirdLetter + inGame;
-			addToFile("item." + name + ".name=" + finalName);
+			addToFile("item." + name + ".name=DNA Key");
 		}
 	}
 	
@@ -259,18 +250,7 @@ public class LangRegistry {
 			char sixthLetter = name.charAt(6);
 			char seventhLetter = name.charAt(7);
 			int numChars = 0;
-			if (Character.isLowerCase(firstLetter)) 
-				firstLetter = Character.toUpperCase(firstLetter);
 			
-			if (Character.isLowerCase(fithLetter)) 
-				fithLetter = Character.toUpperCase(fithLetter);
-
-			if (Character.isLowerCase(sixthLetter)) 
-				sixthLetter = Character.toUpperCase(sixthLetter);
-
-			if (Character.isLowerCase(seventhLetter)) 
-				seventhLetter = Character.toUpperCase(seventhLetter);
-
 			String inGame = name.substring(1);
 			for (int p = 0; p < name.length(); p++) {
 				char c = name.charAt(p);
@@ -288,8 +268,7 @@ public class LangRegistry {
 					}
 				}
 			}
-			String finalName = firstLetter + fithLetter + sixthLetter + seventhLetter + inGame;
-			addToFile("item." + name + ".name=" + finalName);
+			addToFile("item." + name + ".name=Mixed DNA Key");
 		}
 	}
 

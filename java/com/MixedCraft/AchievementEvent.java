@@ -10,38 +10,37 @@ public class AchievementEvent {
 	@SubscribeEvent
 	public void onItemCrafted(PlayerEvent.ItemCraftedEvent event){
 		if(event.crafting.getItem().equals(BlockHelper.Assembler)){
-			event.player.addStat(Achievements.Assembler, 1);
+			event.player.triggerAchievement(Achievements.Assembler);
 		}
 		
 		if(event.crafting.getItem().equals(BlockHelper.Extractor)){
-			event.player.addStat(Achievements.Extractor, 1);
+			event.player.triggerAchievement(Achievements.Extractor);
 		}
 		
 		if(event.crafting.getItem().equals(BlockHelper.Mixer)){
-			event.player.addStat(Achievements.Mixer, 1);
+			event.player.triggerAchievement(Achievements.Mixer);
 		}
 	}
 	
 	@SubscribeEvent
 	public void onItemSmelting(PlayerEvent.ItemSmeltedEvent event){
 		if(event.smelting.getItem().equals(ItemHelper.CopperIngot)){
-			event.player.addStat(Achievements.Copper, 1);
+			event.player.triggerAchievement(Achievements.Copper);
 		}
 		
 		if(event.smelting.getItem().equals(ItemHelper.TinIngot)){
-			event.player.addStat(Achievements.Copper, 1);
+			event.player.triggerAchievement(Achievements.Copper);
 		}
 	}
 	
 	@SubscribeEvent
 	public void onItemPickup(PlayerEvent.ItemPickupEvent event){
-		if(event.pickedUp.equals(new ItemStack(BlockHelper.TinOre))) {
-			event.player.addStat(Achievements.TinOre, 1);
+		if(event.pickedUp == new EntityItem(event.player.worldObj, event.player.posX, event.player.posY, event.player.posZ, new ItemStack(BlockHelper.TinOre))) {
+			event.player.triggerAchievement(Achievements.TinOre);
 		}
 		
 		if(event.pickedUp.equals(new ItemStack(BlockHelper.CopperOre))) {
-			event.player.addStat(Achievements.CopperOre, 1);
+			event.player.triggerAchievement(Achievements.CopperOre);
 		}
 	}
-	
 }

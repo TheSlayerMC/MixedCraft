@@ -11,7 +11,7 @@ public class ClientEvent {
 
 	@SubscribeEvent
 	public void onTick(ClientTickEvent event){
-		ManaHelper.updateAllBars(MinecraftServer.getServer().getConfigurationManager().playerEntityList);
+		
 	}
 	
 }

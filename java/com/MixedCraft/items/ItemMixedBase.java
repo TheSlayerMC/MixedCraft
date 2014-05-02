@@ -28,7 +28,7 @@ public class ItemMixedBase extends ItemsBase{
 	}
 	
 	public Item setName(String name){
-		registerTextures(name);
+		registerTextures("mixeddnaKey");
 		setUnlocalizedName(name);
 		setCreativeTab(MixedCraft.MixedDNATab);
 		GameRegistry.registerItem(this, name);

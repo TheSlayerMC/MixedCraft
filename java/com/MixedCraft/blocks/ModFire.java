@@ -339,7 +339,7 @@ public class ModFire extends BlockFire {
      */
     public void onBlockAdded(World world, int p_149726_2_, int p_149726_3_, int p_149726_4_)
     {
-        if (world.provider.dimensionId > 0 || !BlockHelper.FlyLightPortal.func_150000_e(world, p_149726_2_, p_149726_3_, p_149726_4_))
+        if (world.provider.dimensionId > 0 || !BlockHelper.flylightPortal.func_150000_e(world, p_149726_2_, p_149726_3_, p_149726_4_))
         {
             if (!World.doesBlockHaveSolidTopSurface(world, p_149726_2_, p_149726_3_ - 1, p_149726_4_) && !this.canNeighborBurn(world, p_149726_2_, p_149726_3_, p_149726_4_))
             {

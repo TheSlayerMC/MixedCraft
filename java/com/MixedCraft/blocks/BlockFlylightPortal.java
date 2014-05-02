@@ -17,6 +17,7 @@ import net.minecraft.world.World;
 
 import com.MixedCraft.BlockHelper;
 import com.MixedCraft.MixedCraft;
+import com.MixedCraft.dimension.TeleporterFlylight;
 import com.MixedCraft.helper.BreakableBase;
 import com.MixedCraft.helper.ConfigHelper;
 import com.MixedCraft.helper.Utils;
@@ -28,8 +29,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class BlockFlylightPortal extends BreakableBase
 {
 	public static final int[][] field_150001_a = new int[][] {new int[0], {3, 1}, {2, 0}};
-
+	public static int x;
+	public static int y;
+	public static int z;
 	public String name;
+	
 	public BlockFlylightPortal() {
 		super(Utils.MOD_ID + ":" + "flylightPortal", Material.portal, false);
 		this.setTickRandomly(true);
@@ -65,23 +69,22 @@ public class BlockFlylightPortal extends BreakableBase
 	}
 
 	@Override
-    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity)
-    {
-        if ((par5Entity.ridingEntity == null) && (par5Entity.riddenByEntity == null) && ((par5Entity instanceof EntityPlayerMP)))
-        {
+    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity) {
+        if ((par5Entity.ridingEntity == null) && (par5Entity.riddenByEntity == null) && ((par5Entity instanceof EntityPlayerMP))) {
             EntityPlayerMP thePlayer = (EntityPlayerMP)par5Entity;
-            if (thePlayer.timeUntilPortal > 0)
-            {
+            if (thePlayer.timeUntilPortal > 0) {
                 thePlayer.timeUntilPortal = 10;
             }
-            else if (thePlayer.dimension != ConfigHelper.Flylight)
-            {
+            
+            else if (thePlayer.dimension != ConfigHelper.Flylight) {
+            	x = par2 + 1;
+            	y = par3;
+            	z = par4 + 1;
                 thePlayer.timeUntilPortal = 10;
-                thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, ConfigHelper.Flylight);
-            }
-            else {
+                thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, ConfigHelper.Flylight, new TeleporterFlylight(thePlayer.mcServer.worldServerForDimension(ConfigHelper.Flylight)));
+            } else {
                 thePlayer.timeUntilPortal = 10;
-                thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0);
+                thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new TeleporterFlylight(thePlayer.mcServer.worldServerForDimension(0)));
             }
         }
     }
@@ -351,14 +354,14 @@ public class BlockFlylightPortal extends BreakableBase
 
 				Block block1 = this.field_150867_a.getBlock(p_150853_1_ + j1 * i1, p_150853_2_ - 1, p_150853_3_ + k1 * i1);
 
-				if (block1 != BlockHelper.FlyLightStone)
+				if (block1 != BlockHelper.flylightStone)
 				{
 					break;
 				}
 			}
 
 			block = this.field_150867_a.getBlock(p_150853_1_ + j1 * i1, p_150853_2_, p_150853_3_ + k1 * i1);
-			return block == BlockHelper.FlyLightStone ? i1 : 0;
+			return block == BlockHelper.flylightStone ? i1 : 0;
 		}
 
 		protected int func_150858_a()
@@ -384,7 +387,7 @@ public class BlockFlylightPortal extends BreakableBase
 							break label56;
 						}
 
-						if (block == BlockHelper.FlyLightPortal)
+						if (block == BlockHelper.flylightPortal)
 						{
 							++this.field_150864_e;
 						}
@@ -393,7 +396,7 @@ public class BlockFlylightPortal extends BreakableBase
 						{
 							block = this.field_150867_a.getBlock(k + Direction.offsetX[BlockFlylightPortal.field_150001_a[this.field_150865_b][0]], i, l + Direction.offsetZ[BlockFlylightPortal.field_150001_a[this.field_150865_b][0]]);
 
-							if (block != BlockHelper.FlyLightStone)
+							if (block != BlockHelper.flylightStone)
 							{
 								break label56;
 							}
@@ -402,7 +405,7 @@ public class BlockFlylightPortal extends BreakableBase
 						{
 							block = this.field_150867_a.getBlock(k + Direction.offsetX[BlockFlylightPortal.field_150001_a[this.field_150865_b][1]], i, l + Direction.offsetZ[BlockFlylightPortal.field_150001_a[this.field_150865_b][1]]);
 
-							if (block != BlockHelper.FlyLightStone)
+							if (block != BlockHelper.flylightStone)
 							{
 								break label56;
 							}
@@ -416,7 +419,7 @@ public class BlockFlylightPortal extends BreakableBase
 				k = this.field_150861_f.posY + this.field_150862_g;
 				l = this.field_150861_f.posZ + i * Direction.offsetZ[BlockFlylightPortal.field_150001_a[this.field_150865_b][1]];
 
-				if (this.field_150867_a.getBlock(j, k, l) != BlockHelper.FlyLightStone)
+				if (this.field_150867_a.getBlock(j, k, l) != BlockHelper.flylightStone)
 				{
 					this.field_150862_g = 0;
 					break;
@@ -438,7 +441,7 @@ public class BlockFlylightPortal extends BreakableBase
 
 		protected boolean func_150857_a(Block block)
 		{
-			return block.getMaterial() == Material.air || block == BlockHelper.ModFire || block == BlockHelper.FlyLightPortal;
+			return block.getMaterial() == Material.air || block == BlockHelper.ModFire || block == BlockHelper.flylightPortal;
 		}
 
 		public boolean func_150860_b()
@@ -456,7 +459,7 @@ public class BlockFlylightPortal extends BreakableBase
 				for (int l = 0; l < this.field_150862_g; ++l)
 				{
 					int i1 = this.field_150861_f.posY + l;
-					this.field_150867_a.setBlock(j, i1, k, BlockHelper.FlyLightPortal, this.field_150865_b, 2);
+					this.field_150867_a.setBlock(j, i1, k, BlockHelper.flylightPortal, this.field_150865_b, 2);
 				}
 			}
 		}

@@ -5,9 +5,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import com.MixedCraft.BlockHelper;
-
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ChunkCoordinates;
@@ -15,9 +12,14 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.LongHashMap;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.ChunkCoordIntPair;
+import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
-public class TeleporterFlylight {
+import com.MixedCraft.BlockHelper;
+import com.MixedCraft.blocks.BlockFlylightPortal;
+import com.MixedCraft.helper.ConfigHelper;
+
+public class TeleporterFlylight extends Teleporter{
 	
     private final WorldServer worldServerInstance;
     private final Random random;
@@ -25,13 +27,14 @@ public class TeleporterFlylight {
     private final List destinationCoordinateKeys = new ArrayList();
 
     public TeleporterFlylight(WorldServer par1WorldServer) {
+    	super(par1WorldServer);
         this.worldServerInstance = par1WorldServer;
         this.random = new Random(par1WorldServer.getSeed());
     }
 
     public void placeInPortal(Entity par1Entity, double par2, double par4, double par6, float par8)
     {
-        if (this.worldServerInstance.provider.dimensionId != 1)
+        if (this.worldServerInstance.provider.dimensionId == ConfigHelper.Flylight)
         {
             if (!this.placeInExistingPortal(par1Entity, par2, par4, par6, par8))
             {
@@ -39,6 +42,7 @@ public class TeleporterFlylight {
                 this.placeInExistingPortal(par1Entity, par2, par4, par6, par8);
             }
         }
+        
         else
         {
             int i = MathHelper.floor_double(par1Entity.posX);
@@ -46,7 +50,7 @@ public class TeleporterFlylight {
             int k = MathHelper.floor_double(par1Entity.posZ);
             byte b0 = 1;
             byte b1 = 0;
-
+            /*
             for (int l = -2; l <= 2; ++l)
             {
                 for (int i1 = -2; i1 <= 2; ++i1)
@@ -57,12 +61,12 @@ public class TeleporterFlylight {
                         int l1 = j + j1;
                         int i2 = k + i1 * b1 - l * b0;
                         boolean flag = j1 < 0;
-                        this.worldServerInstance.setBlock(k1, l1, i2, flag ? BlockHelper.FlyLightStone : Blocks.air);
+                        this.worldServerInstance.setBlock(k1, l1, i2, flag ? VanillaBlocks.divineRock : Blocks.air);
                     }
                 }
-            }
+            }*/
 
-            par1Entity.setLocationAndAngles((double)i, (double)j, (double)k, par1Entity.rotationYaw, 0.0F);
+            par1Entity.setLocationAndAngles((double)BlockFlylightPortal.x, (double)BlockFlylightPortal.y, (double)BlockFlylightPortal.z, par1Entity.rotationYaw, 0.0F);
             par1Entity.motionX = par1Entity.motionY = par1Entity.motionZ = 0.0D;
         }
     }
@@ -103,9 +107,9 @@ public class TeleporterFlylight {
 
                     for (int i2 = this.worldServerInstance.getActualHeight() - 1; i2 >= 0; --i2)
                     {
-                        if (this.worldServerInstance.getBlock(l3, i2, l1) == BlockHelper.FlyLightPortal)
+                        if (this.worldServerInstance.getBlock(l3, i2, l1) == BlockHelper.flylightPortal)
                         {
-                            while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == BlockHelper.FlyLightPortal)
+                            while (this.worldServerInstance.getBlock(l3, i2 - 1, l1) == BlockHelper.flylightPortal)
                             {
                                 --i2;
                             }
@@ -139,22 +143,22 @@ public class TeleporterFlylight {
             d7 = (double)k + 0.5D;
             int i4 = -1;
 
-            if (this.worldServerInstance.getBlock(i - 1, j, k) == BlockHelper.FlyLightPortal)
+            if (this.worldServerInstance.getBlock(i - 1, j, k) == BlockHelper.flylightPortal)
             {
                 i4 = 2;
             }
 
-            if (this.worldServerInstance.getBlock(i + 1, j, k) == BlockHelper.FlyLightPortal)
+            if (this.worldServerInstance.getBlock(i + 1, j, k) == BlockHelper.flylightPortal)
             {
                 i4 = 0;
             }
 
-            if (this.worldServerInstance.getBlock(i, j, k - 1) == BlockHelper.FlyLightPortal)
+            if (this.worldServerInstance.getBlock(i, j, k - 1) == BlockHelper.flylightPortal)
             {
                 i4 = 3;
             }
 
-            if (this.worldServerInstance.getBlock(i, j, k + 1) == BlockHelper.FlyLightPortal)
+            if (this.worldServerInstance.getBlock(i, j, k + 1) == BlockHelper.flylightPortal)
             {
                 i4 = 1;
             }
@@ -439,7 +443,7 @@ public class TeleporterFlylight {
                         i4 = j2 + k3;
                         j4 = k2 + (j3 - 1) * l2 - i3 * l5;
                         flag = k3 < 0;
-                        this.worldServerInstance.setBlock(l3, i4, j4, flag ? BlockHelper.FlyLightStone : Blocks.air);
+                        this.worldServerInstance.setBlock(l3, i4, j4, flag ? BlockHelper.flylightStone : Blocks.air);
                     }
                 }
             }
@@ -455,7 +459,7 @@ public class TeleporterFlylight {
                     i4 = j2 + k3;
                     j4 = k2 + (j3 - 1) * l2;
                     flag = j3 == 0 || j3 == 3 || k3 == -1 || k3 == 3;
-                    this.worldServerInstance.setBlock(l3, i4, j4, (Block)(flag ? BlockHelper.FlyLightStone : BlockHelper.FlyLightPortal), 0, 2);
+                    this.worldServerInstance.setBlock(l3, i4, j4, (flag ? BlockHelper.flylightStone : BlockHelper.flylightPortal), 0, 2);
                 }
             }
 
@@ -497,7 +501,6 @@ public class TeleporterFlylight {
 
     public class PortalPosition extends ChunkCoordinates {
         public long lastUpdateTime;
-        private static final String __OBFID = "CL_00000154";
 
         public PortalPosition(int par2, int par3, int par4, long par5)
         {

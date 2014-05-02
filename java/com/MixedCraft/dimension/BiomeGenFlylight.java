@@ -19,8 +19,8 @@ public class BiomeGenFlylight extends BiomeGenBase{
 	public BiomeGenFlylight() {
 		super(DimensionHelper.FlyLightID);		 
 		setBiomeName("Flylight");
-		topBlock = BlockHelper.FlyLightGrass;
-		fillerBlock = BlockHelper.FlyLightDirt;
+		topBlock = BlockHelper.flylightGrass;
+		fillerBlock = BlockHelper.flylightDirt;
 		spawnableCreatureList.clear();
 		spawnableMonsterList.clear();
 		this.spawnableCreatureList.add(new SpawnListEntry(EntityChicken.class, 3, 2, 6));

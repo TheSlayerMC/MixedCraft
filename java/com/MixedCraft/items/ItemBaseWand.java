@@ -17,7 +17,6 @@ public abstract class ItemBaseWand extends ItemsBase {
 	public ItemBaseWand() {
 		this.maxStackSize = 1;
 		this.setCreativeTab(MixedCraft.MiscTab);
-		LangRegistry.addItem(this);
 	}
 
 	public abstract int getUseCost();

@@ -16,12 +16,10 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemFlameSword extends SwordBase {
 	
-    private final ToolMaterial field_40439_b;
 	private String IIconPath;
 
     public ItemFlameSword(ToolMaterial var2) {
         super(var2);
-        this.field_40439_b = var2;
         this.maxStackSize = 1;
         this.setMaxDamage(-1);
     }
@@ -33,7 +31,6 @@ public class ItemFlameSword extends SwordBase {
     }
 
     @Override 
-    @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
         super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
         par3List.add("When hits: Burns for 16 seconds");

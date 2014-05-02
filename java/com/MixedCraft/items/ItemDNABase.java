@@ -21,13 +21,12 @@ public class ItemDNABase extends ItemsBase{
 	private int Gui;
 
 	public ItemDNABase(int Gui){
-		super();
 		LangRegistry.addDNAItem(this);
 		this.Gui = Gui;
 	}
 
 	public Item setName(String name){
-		registerTextures(name);
+		registerTextures("dnaKey");
 		setUnlocalizedName(name);
 		setCreativeTab(MixedCraft.DNATab);
 		GameRegistry.registerItem(this, name);

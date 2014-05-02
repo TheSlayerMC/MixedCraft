@@ -35,10 +35,6 @@ public class EntityTorch extends EntityArrow
     private int inData;
     private boolean inGround, hasPlaced = false;
     /**
-     * 1 if the player can pick up the arrow
-     */
-    public int canBePickedUp;
-    /**
      * Seems to be some sort of timer for animating an arrow.
      */
     public int arrowShake;
@@ -76,11 +72,6 @@ public class EntityTorch extends EntityArrow
         this.renderDistanceWeight = 10.0D;
         this.shootingEntity = par2EntityLivingBase;
 
-        if (par2EntityLivingBase instanceof EntityPlayer)
-        {
-            this.canBePickedUp = 1;
-        }
-
         this.posY = par2EntityLivingBase.posY + (double)par2EntityLivingBase.getEyeHeight() - 0.10000000149011612D;
         double d0 = par3EntityLivingBase.posX - par2EntityLivingBase.posX;
         double d1 = par3EntityLivingBase.boundingBox.minY + (double)(par3EntityLivingBase.height / 3.0F) - this.posY;
@@ -105,11 +96,6 @@ public class EntityTorch extends EntityArrow
         super(par1World);
         this.renderDistanceWeight = 10.0D;
         this.shootingEntity = par2EntityLivingBase;
-
-        if (par2EntityLivingBase instanceof EntityPlayer)
-        {
-            this.canBePickedUp = 1;
-        }
 
         this.setSize(0.5F, 0.5F);
         this.setLocationAndAngles(par2EntityLivingBase.posX, par2EntityLivingBase.posY + (double)par2EntityLivingBase.getEyeHeight(), par2EntityLivingBase.posZ, par2EntityLivingBase.rotationYaw, par2EntityLivingBase.rotationPitch);
@@ -468,7 +454,6 @@ public class EntityTorch extends EntityArrow
         par1NBTTagCompound.setByte("inData", (byte)this.inData);
         par1NBTTagCompound.setByte("shake", (byte)this.arrowShake);
         par1NBTTagCompound.setByte("inGround", (byte)(this.inGround ? 1 : 0));
-        par1NBTTagCompound.setByte("pickup", (byte)this.canBePickedUp);
     }
 
     /**
@@ -484,15 +469,6 @@ public class EntityTorch extends EntityArrow
         this.inData = par1NBTTagCompound.getByte("inData") & 255;
         this.arrowShake = par1NBTTagCompound.getByte("shake") & 255;
         this.inGround = par1NBTTagCompound.getByte("inGround") == 1;
-
-        if (par1NBTTagCompound.hasKey("pickup", 99))
-        {
-            this.canBePickedUp = par1NBTTagCompound.getByte("pickup");
-        }
-        else if (par1NBTTagCompound.hasKey("player", 99))
-        {
-            this.canBePickedUp = par1NBTTagCompound.getBoolean("player") ? 1 : 0;
-        }
     }
 
     /**

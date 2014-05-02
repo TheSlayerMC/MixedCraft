@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -25,7 +26,7 @@ public class WandOfMining extends ItemBaseWand {
 	public int getBaseRepairCost() {
 		return 5;
 	}
-	/*
+	
 	@Override 
 	public boolean onItemUse(ItemStack srcItemStack, EntityPlayer playerEntity, World world, int targetX, int targetY, int targetZ, int par7, float par8, float par9, float par10) {
 		if (!playerEntity.capabilities.isCreativeMode) {
@@ -64,18 +65,18 @@ public class WandOfMining extends ItemBaseWand {
 		int targetMeta = world.getBlockMetadata(targetX, targetY, targetZ);
 		Block target2;
 
-		if (target > 0) {
+		/*if (target > 0) {
 			target = Block.blocksList[target];
 		} else {
 			return false;
-		}
+		}*/
 
-		if (Item.pickaxeDiamond.canHarvestBlock(target)
+		if (Items.diamond_pickaxe.canHarvestBlock(target, null)
 				|| target.getBlockHardness(world, targetX, targetY, targetZ) < 0.0F
-				|| Item.shovelDiamond.canHarvestBlock(target)
-				|| Item.axeDiamond.canHarvestBlock(target)) {
+				|| Items.diamond_shovel.canHarvestBlock(target, null)
+				|| Items.diamond_axe.canHarvestBlock(target, null)) {
 
-			world.destroyBlock(targetX, targetY, targetZ, true);
+			world.func_147480_a(targetX, targetY, targetZ, true);
 			return true;
 		}
 		return false;
@@ -84,14 +85,12 @@ public class WandOfMining extends ItemBaseWand {
 
 	protected void canHarvest(World world, int x, int y, int z) {
 		if (isHarvestable(world, x, y, z)) {
-			world.destroyBlock(y, x, z, true);
+			world.func_147480_a(y, x, z, true);
 		}
 	}
 
 	protected boolean isHarvestable(World w, int x, int y, int z) {
-		Material mat = w.getBlockMaterial(x, y, z);
-
+		Material mat = w.getBlock(x, y, z).getMaterial();
 		return mat == Material.rock;
-	}*/
-
+	}
 }
