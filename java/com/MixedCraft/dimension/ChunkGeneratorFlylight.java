@@ -29,7 +29,7 @@ import net.minecraft.world.gen.feature.WorldGenReed;
 import net.minecraftforge.event.terraingen.TerrainGen;
 
 import com.MixedCraft.BlockHelper;
-import com.MixedCraft.blocks.ModOre;
+import com.MixedCraft.api.blocks.BlockModOre;
 import com.MixedCraft.gen.WorldGenFlylightTree;
 
 public class ChunkGeneratorFlylight implements IChunkProvider {

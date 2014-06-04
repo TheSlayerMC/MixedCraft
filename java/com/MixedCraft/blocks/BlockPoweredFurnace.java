@@ -36,8 +36,8 @@ public class BlockPoweredFurnace extends BlockModContainer {
 	@SideOnly(Side.CLIENT)
 	private IIcon PowerFurnaceIIconFront;
 
-	public BlockPoweredFurnace(boolean par2) {
-		super(Material.rock);
+	public BlockPoweredFurnace(boolean par2, String name) {
+		super(Material.rock, name);
 		this.isActive = par2;
 		if(!par2)
 			setCreativeTab(MixedCraft.BlockTab);

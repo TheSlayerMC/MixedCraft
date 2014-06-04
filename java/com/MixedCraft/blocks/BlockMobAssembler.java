@@ -4,7 +4,6 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -15,15 +14,12 @@ import net.minecraft.world.World;
 
 import com.MixedCraft.BlockHelper;
 import com.MixedCraft.MixedCraft;
+import com.MixedCraft.blocks.container.BlockModContainer;
 import com.MixedCraft.blocks.tileEntity.TileEntityDNAAssembler;
-import com.MixedCraft.helper.ContainerBase;
-import com.MixedCraft.helper.Utils;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockMobAssembler extends ContainerBase {
+public class BlockMobAssembler extends BlockModContainer {
 
 	private Random furnaceRand = new Random();
 
@@ -31,8 +27,8 @@ public class BlockMobAssembler extends ContainerBase {
 
 	private IIcon top, bottom, side;
 
-	public BlockMobAssembler() {
-		super(Material.wood);
+	public BlockMobAssembler(String name) {
+		super(Material.wood, name);
 		setHardness(2.0F);
 		registerTexture("MobAssembler_Side", "MobAssembler_Top" , "MobAssembler_Bottom");
 	}
@@ -75,11 +71,11 @@ public class BlockMobAssembler extends ContainerBase {
 
 		if (par0)
 		{
-			par1World.setBlock(par2, par3, par4, BlockHelper.Assembler);
+			par1World.setBlock(par2, par3, par4, BlockHelper.assembler);
 		}
 		else
 		{
-			par1World.setBlock(par2, par3, par4, BlockHelper.Assembler);
+			par1World.setBlock(par2, par3, par4, BlockHelper.assembler);
 		}
 
 		keepFurnaceInventory = true;

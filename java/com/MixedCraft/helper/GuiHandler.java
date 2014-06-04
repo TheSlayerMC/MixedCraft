@@ -54,8 +54,7 @@ public class GuiHandler implements IGuiHandler {
 		}
 
 		switch (id) {
-
-		case 1: return id == craftingTable && world.getBlock(x, y, z) == BlockHelper.BigCrafting ? new ContainerBigCrafting(player.inventory, world, x, y, z) : null;
+		case 1: return id == craftingTable && world.getBlock(x, y, z) == BlockHelper.bigCrafting ? new ContainerBigCrafting(player.inventory, world, x, y, z) : null;
 		case 2: return new DNAContainer();
 		case 3: return new DNAContainer();
 		case 4: return new DNAContainer();
@@ -109,7 +108,7 @@ public class GuiHandler implements IGuiHandler {
 		if (entity instanceof TileEntityDiamondFurnace) {
 			return new GuiDiamondFurnace(player.inventory,
 					(TileEntityDiamondFurnace) world
-							.getTileEntity(x, y, z));
+					.getTileEntity(x, y, z));
 		}
 
 		if (entity instanceof TileEntityGoldFurnace) {
@@ -124,7 +123,7 @@ public class GuiHandler implements IGuiHandler {
 
 		switch (id) {
 		case 1:
-			return id == craftingTable && world.getBlock(x, y, z) == BlockHelper.BigCrafting ? new GuiBigCrafting(player.inventory, world, x, y, z) : null;
+			return id == craftingTable && world.getBlock(x, y, z) == BlockHelper.bigCrafting ? new GuiBigCrafting(player.inventory, world, x, y, z) : null;
 		case 2:
 			return new GuiCowDNA();
 		case 3:

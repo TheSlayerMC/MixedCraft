@@ -29,8 +29,8 @@ public class BlockChocolateCake extends BlocksBase
     @SideOnly(Side.CLIENT)
     private IIcon field_94382_c;
 
-    public BlockChocolateCake() {
-        super(Material.cake);
+    public BlockChocolateCake(String name) {
+        super(Material.cake, name);
         this.setTickRandomly(true);
         setHardness(0.5F);
         setStepSound(Block.soundTypeCloth);

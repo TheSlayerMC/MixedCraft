@@ -8,13 +8,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import com.MixedCraft.MixedCraft;
-import com.MixedCraft.items.tools.SwordBase;
+import com.MixedCraft.items.tools.ItemSwordBase;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemBigSword extends SwordBase{
+public class ItemBigSword extends ItemSwordBase{
 
 	public ItemBigSword(ToolMaterial par3enum) {
 		super(par3enum);

@@ -94,13 +94,13 @@ public class EntityCowSheep extends EntityAnimal implements IShearable
     {
         if (!this.getSheared())
         {
-            this.entityDropItem(new ItemStack(BlockHelper.CowSheepWool, 1, this.getFleeceColor()), 0.0F);
+            this.entityDropItem(new ItemStack(BlockHelper.cowSheepWool, 1, this.getFleeceColor()), 0.0F);
         }
     }
 
     protected Item getDropItem()
     {
-        return Item.getItemFromBlock(BlockHelper.CowSheepWool);
+        return Item.getItemFromBlock(BlockHelper.cowSheepWool);
     }
 
     @SideOnly(Side.CLIENT)
@@ -281,9 +281,8 @@ public class EntityCowSheep extends EntityAnimal implements IShearable
 		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
         setSheared(true);
         int i = 1 + rand.nextInt(3);
-        for (int j = 0; j < i; j++)
-        {
-            ret.add(new ItemStack(BlockHelper.CowSheepWool, 1, getFleeceColor()));
+        for (int j = 0; j < i; j++) {
+            ret.add(new ItemStack(BlockHelper.cowSheepWool, 1, getFleeceColor()));
         }
         this.worldObj.playSoundAtEntity(this, "mob.sheep.shear", 1.0F, 1.0F);
         return ret;

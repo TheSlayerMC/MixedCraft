@@ -17,18 +17,19 @@ import net.minecraftforge.common.util.ForgeDirection;
 
 import com.MixedCraft.ItemHelper;
 import com.MixedCraft.MixedCraft;
+import com.MixedCraft.api.blocks.BlockModFlower;
 import com.MixedCraft.helper.Utils;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockChocolateCrop extends ModFlower implements IGrowable
+public class BlockChocolateCrop extends BlockModFlower implements IGrowable
 {
     @SideOnly(Side.CLIENT)
     private IIcon[] IIconArray;
 
-    public BlockChocolateCrop() {
-        super();
+    public BlockChocolateCrop(String name) {
+        super(name);
         this.setTickRandomly(true);
         float f = 0.5F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, 0.25F, 0.5F + f);

@@ -1,5 +1,6 @@
 package com.MixedCraft;
 
+import com.MixedCraft.api.MixedAPI;
 import com.MixedCraft.helper.ManaHelper;
 
 import net.minecraft.client.Minecraft;

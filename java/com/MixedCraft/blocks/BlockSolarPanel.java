@@ -18,8 +18,8 @@ import com.MixedCraft.blocks.tileEntity.TileEntitySolarPanel;
 public class BlockSolarPanel extends BlockModContainer
 {
 
-	public BlockSolarPanel() {
-		super(Material.wood);
+	public BlockSolarPanel(String name) {
+		super(Material.wood, name);
 		this.setCreativeTab(MixedCraft.BlockTab);
 		setStepSound(Block.soundTypeMetal);
 		registerTexture("SolarPanel_Side", "SolarPanel_Top", "SolarPanel_Bottom");

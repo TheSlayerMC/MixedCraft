@@ -46,7 +46,7 @@ public class WorldGenMixedMinable implements IWorldGenerator{
 			int randPosY = rand.nextInt(50);
 			int randPosZ = chunkZ + rand.nextInt(16);
 
-			(new WorldGenMinable(BlockHelper.CopperOre, 5)).generate(world, rand, randPosX, randPosY, randPosZ);		
+			(new WorldGenMinable(BlockHelper.copperOre, 5)).generate(world, rand, randPosX, randPosY, randPosZ);		
 		}	
 		
 		for(int i = 0; i < 8; i++) {
@@ -54,7 +54,7 @@ public class WorldGenMixedMinable implements IWorldGenerator{
 			int randPosY = rand.nextInt(50);
 			int randPosZ = chunkZ + rand.nextInt(16);
 
-			(new WorldGenMinable(BlockHelper.TinOre, 5)).generate(world, rand, randPosX, randPosY, randPosZ);		
+			(new WorldGenMinable(BlockHelper.tinOre, 5)).generate(world, rand, randPosX, randPosY, randPosZ);		
 		}	
 		
 		for(int i = 0; i < 3; i++) {
@@ -62,7 +62,7 @@ public class WorldGenMixedMinable implements IWorldGenerator{
 			int randPosY = rand.nextInt(20);
 			int randPosZ = chunkZ + rand.nextInt(16);
 
-			(new WorldGenMinable(BlockHelper.SilverOre, 3)).generate(world, rand, randPosX, randPosY, randPosZ);		
+			(new WorldGenMinable(BlockHelper.silverOre, 3)).generate(world, rand, randPosX, randPosY, randPosZ);		
 		}
 		
 		for(int i = 0; i < 7; i++) {

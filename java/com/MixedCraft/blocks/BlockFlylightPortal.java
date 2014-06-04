@@ -34,10 +34,12 @@ public class BlockFlylightPortal extends BreakableBase
 	public static int z;
 	public String name;
 	
-	public BlockFlylightPortal() {
-		super(Utils.MOD_ID + ":" + "flylightPortal", Material.portal, false);
+	public BlockFlylightPortal(String name) {
+		super(Material.portal, name);
 		this.setTickRandomly(true);
 		setCreativeTab(MixedCraft.BlockTab);
+        setTextureName(name);
+        GameRegistry.registerBlock(this, name);
 	}
 
 	/**
@@ -441,7 +443,7 @@ public class BlockFlylightPortal extends BreakableBase
 
 		protected boolean func_150857_a(Block block)
 		{
-			return block.getMaterial() == Material.air || block == BlockHelper.ModFire || block == BlockHelper.flylightPortal;
+			return block.getMaterial() == Material.air || block == BlockHelper.modFire || block == BlockHelper.flylightPortal;
 		}
 
 		public boolean func_150860_b()
@@ -468,15 +470,7 @@ public class BlockFlylightPortal extends BreakableBase
     public Block setTextureName(String name) {
         return setBlockTextureName(Utils.MOD_ID + ":" + name);
     }
-
-    public Block setName(String name) {
-        this.name = name;
-        setTextureName(name);
-        setBlockName(name);
-        register();
-        return this;
-    }
-
+    
     public String getName() {
         return name;
     }
@@ -505,6 +499,6 @@ public class BlockFlylightPortal extends BreakableBase
                 }
             }
         }
-        GameRegistry.registerBlock(this, name);
+        
     }
 }

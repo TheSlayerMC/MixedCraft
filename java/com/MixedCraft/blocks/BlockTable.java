@@ -15,8 +15,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class BlockTable extends BlockModContainer {
 	
-    public BlockTable() {
-        super(Material.rock);   
+    public BlockTable(String name) {
+        super(Material.rock, name);   
         setStepSound(Block.soundTypeWood);
         setCreativeTab(MixedCraft.BlockTab);
     }

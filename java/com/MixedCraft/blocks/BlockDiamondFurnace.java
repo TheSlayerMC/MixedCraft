@@ -39,9 +39,9 @@ public class BlockDiamondFurnace extends BlockModContainer
 	@SideOnly(Side.CLIENT)
 	private IIcon DiamondFurnaceIIconFront;
 
-	public BlockDiamondFurnace(boolean par2)
+	public BlockDiamondFurnace(boolean par2, String name)
 	{
-		super(Material.rock);
+		super(Material.rock, name);
 		this.isActive = par2;
 		setHardness(3.5F);
         setStepSound(Block.soundTypeMetal);
@@ -49,7 +49,7 @@ public class BlockDiamondFurnace extends BlockModContainer
 
 	public Item getItemDropped(int par1, Random par2Random, int par3)
 	{
-		return Item.getItemFromBlock(BlockHelper.DiamondFurnaceOff);
+		return Item.getItemFromBlock(BlockHelper.diamondFurnace);
 	}
 
 	public void onBlockAdded(World par1World, int par2, int par3, int par4)
@@ -124,11 +124,11 @@ public class BlockDiamondFurnace extends BlockModContainer
 
 		if (par0)
 		{
-			par1World.setBlock(par2, par3, par4, BlockHelper.DiamondFurnaceOn);
+			par1World.setBlock(par2, par3, par4, BlockHelper.diamondFurnaceOn);
 		}
 		else
 		{
-			par1World.setBlock(par2, par3, par4, BlockHelper.DiamondFurnaceOff);
+			par1World.setBlock(par2, par3, par4, BlockHelper.diamondFurnace);
 		}
 
 		keepDiamondFurnaceInventory = false;
@@ -277,6 +277,6 @@ public class BlockDiamondFurnace extends BlockModContainer
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World par1World, int par2, int par3, int par4)
 	{
-		return Item.getItemFromBlock(BlockHelper.DiamondFurnaceOff);
+		return Item.getItemFromBlock(BlockHelper.diamondFurnace);
 	}
 }

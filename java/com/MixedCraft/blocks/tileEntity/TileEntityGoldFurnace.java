@@ -17,7 +17,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 
-import com.MixedCraft.blocks.GoldFurnace;
+import com.MixedCraft.blocks.BlockGoldFurnace;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -249,7 +249,7 @@ public class TileEntityGoldFurnace extends TileEntity implements ISidedInventory
             if (flag != this.furnaceBurnTime > 0)
             {
                 flag1 = true;
-                GoldFurnace.updateGoldFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
+                BlockGoldFurnace.updateGoldFurnaceBlockState(this.furnaceBurnTime > 0, this.worldObj, this.xCoord, this.yCoord, this.zCoord);
             }
         }
 

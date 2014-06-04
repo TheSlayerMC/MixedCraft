@@ -28,12 +28,4 @@ public class HelperHandler {
 	public static ToolMaterial Gold = EnumHelper.addToolMaterial("Gold", 4, 1000, 0.2F, 4, 16);
 	public static ToolMaterial Wood = EnumHelper.addToolMaterial("Wood", 0, 1000, 0.1F, 0, 5);
 	public static ToolMaterial Stone = EnumHelper.addToolMaterial("Stone", 4, 1000, 0.2F, 2, 16);	
-	
-	public static void addItem(Item object, String name){
-		GameRegistry.registerItem(object, name);
-	}
-	
-	public static void addBlock(Block object, String name){
-		GameRegistry.registerBlock(object, name);
-	}
 }

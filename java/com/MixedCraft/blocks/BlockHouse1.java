@@ -11,8 +11,8 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 import com.MixedCraft.ItemHelper;
-import com.MixedCraft.MixedAPI;
 import com.MixedCraft.MixedCraft;
+import com.MixedCraft.api.MixedAPI;
 import com.MixedCraft.gen.House1;
 import com.MixedCraft.helper.BlocksBase;
 
@@ -24,15 +24,15 @@ public class BlockHouse1 extends BlocksBase
 	private EntityPlayer entityplayer;
 	private String register;
 
-	public BlockHouse1()
+	public BlockHouse1(String name)
 	{
-		super(Material.wood);
+		super(Material.wood, name);
 		this.setCreativeTab(MixedCraft.BlockTab);
 		GameRegistry.registerBlock(this, getUnlocalizedName());
 	}
 	public void registerBlockIcons(IIconRegister var1)
 	{
-		this.blockIcon = var1.registerIcon("MixedCraft:House1");
+		this.blockIcon = var1.registerIcon("MixedCraft:house1");
 	}
 
 	public IIcon getBlockTextureFromSideAndMetadata(int var1, int var2)

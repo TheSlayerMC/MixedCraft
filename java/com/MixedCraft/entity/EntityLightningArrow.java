@@ -405,7 +405,8 @@ public class EntityLightningArrow extends EntityArrow
 
                     if (this.field_145790_g.getMaterial() != Material.air) {
                         this.field_145790_g.onEntityCollidedWithBlock(this.worldObj, this.field_145791_d, this.field_145792_e, this.field_145789_f, this);
-                        worldObj.spawnEntityInWorld(new EntityLightningBolt(worldObj, posX, posY, posZ));
+                        if(!worldObj.isRemote)
+                        	worldObj.spawnEntityInWorld(new EntityLightningBolt(worldObj, posX, posY, posZ));
                         setDead();
                     }
                 }

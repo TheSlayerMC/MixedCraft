@@ -28,9 +28,9 @@ public class BlockGoldDoor extends BlocksBase
     @SideOnly(Side.CLIENT)
     private IIcon[] field_111043_b;
 
-    public BlockGoldDoor(Material par2Material)
+    public BlockGoldDoor(Material par2Material, String name)
     {
-        super(par2Material);
+        super(par2Material,  name);
         float f = 0.5F;
         float f1 = 1.0F;
         this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f, 0.5F + f, f1, 0.5F + f);

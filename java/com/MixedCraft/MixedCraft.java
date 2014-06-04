@@ -5,7 +5,7 @@ import net.minecraft.item.*;
 import net.minecraft.world.biome.*;
 import net.minecraftforge.fluids.Fluid;
 
-import com.MixedCraft.blocks.ModFluid;
+import com.MixedCraft.api.ModFluid;
 import com.MixedCraft.dimension.BiomeGenFlylight;
 import com.MixedCraft.handler.*;
 import com.MixedCraft.helper.*;
@@ -26,41 +26,29 @@ public class MixedCraft extends HelperHandler {
 	@SidedProxy(serverSide = Utils.COMMONPROXY, clientSide = Utils.CLIENTPROXY)
 	public static CommonProxy proxy; 
 
-	public static Fluid Mod = new ModFluid("Fluid");
+	public static Fluid modWater = new ModFluid("Fluid");
 	
 	public static final CreativeTabs DNATab = new CreativeTabs("DNA"){
-		public Item getTabIconItem() { 
-			return ItemHelper.CowDNADrive;
-		}
+		public Item getTabIconItem() { return ItemHelper.CowDNADrive; }
 	};
 	public static final CreativeTabs MixedDNATab = new CreativeTabs("MixedDNA"){
-		public Item getTabIconItem() { 
-			return ItemHelper.CowBlazeMixedDrive;
-		}
+		public Item getTabIconItem() { return ItemHelper.CowBlazeMixedDrive; }
 	};
 	public static final CreativeTabs SpawnerTab = new CreativeTabs("Spawner"){
-		public Item getTabIconItem() { 
-			return ItemHelper.CowChickenSpawner;
-		}
+		public Item getTabIconItem() { return ItemHelper.CowChickenSpawner; }
 	};
 	public static final CreativeTabs BlockTab = new CreativeTabs("Block"){
-		public Item getTabIconItem() { 
-			return Item.getItemFromBlock(BlockHelper.Extractor);
-		}
+		public Item getTabIconItem() { return Item.getItemFromBlock(BlockHelper.extractor); }
 	};
 	public static final CreativeTabs ToolTab = new CreativeTabs("Tool"){
-		public Item getTabIconItem() { 
-			return ItemHelper.SilverPickaxe;
-		}
+		public Item getTabIconItem() { return ItemHelper.SilverPickaxe; }
 	};
 	public static final CreativeTabs MiscTab = new CreativeTabs("Misc"){
-		public Item getTabIconItem() { 
-			return ItemHelper.SilverIngot;
-		}
+		public Item getTabIconItem() { return ItemHelper.SilverIngot; }
 	};
 	
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {	    
+	public void preInit(FMLPreInitializationEvent event) {
 		proxy.preInit(event);
 		proxy.registerRenderInformation();
 		event.getModMetadata().credits = "The_Slayer ~ The programmer, DrCyano ~ The programmer for the Magic Wands mod";

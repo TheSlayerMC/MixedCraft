@@ -24,10 +24,13 @@ public class BlocksBase extends Block {
     protected String tileBottomName;
     protected boolean enableStats = true;
     
-    public BlocksBase(Material material) {
+    public BlocksBase(Material material, String name) {
         super(material);
         this.setCreativeTab(MixedCraft.BlockTab);
         setHardness(2.0F);
+        GameRegistry.registerBlock(this, name);
+        setBlockName(name);                 
+        registerTexture(name);
         LangRegistry.addBlock(this);
     }
     
@@ -58,13 +61,6 @@ public class BlocksBase extends Block {
         tileSide = icon.registerIcon(Utils.MOD_ID +":" + tileSideName);
         tileTop = icon.registerIcon(Utils.MOD_ID +":" + tileTopName);
         tileBottom = icon.registerIcon(Utils.MOD_ID +":" + tileBottomName);
-    }
-    
-    public Block setName(String name) {
-        GameRegistry.registerBlock(this, name);
-        setBlockName(name);                 
-        registerTexture(name);
-        return this;
     }
 
     @Override

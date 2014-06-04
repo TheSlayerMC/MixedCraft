@@ -39,7 +39,7 @@ public class RenderTable extends TileEntitySpecialRenderer
         this.bindTexture(texture);
         
         GL11.glPushMatrix();
-        GL11.glTranslatef((float)x + 0.5F, (float)y - 0.6F, (float)z + 0.5F);
+        GL11.glTranslatef((float)x + 0.5F, (float)y - 0.0F, (float)z + 0.5F);
         GL11.glRotatef(rotation * 90, 0.0F, 1.0F, 0.0F);
         modelTable.render(0.0625F);
         GL11.glPopMatrix();

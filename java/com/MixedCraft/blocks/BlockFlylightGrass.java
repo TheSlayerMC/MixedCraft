@@ -17,11 +17,14 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 public class BlockFlylightGrass extends BlocksBase {
 
-    public BlockFlylightGrass() {
-        super(Material.grass);
+    public BlockFlylightGrass(String name) {
+        super(Material.grass, name);
         this.setTickRandomly(true);
         this.registerTexture("flylightGrass_Side", "flylightGrass_Top", "flylightGrass_Bottom");
-        setHardness(1.5F); setLightLevel(0.7F);
+        setHardness(1.5F); 
+        setLightLevel(0.7F);
+        GameRegistry.registerBlock(this, name);
+        setBlockName(name);  
     }
 
     @Override
@@ -50,25 +53,13 @@ public class BlockFlylightGrass extends BlocksBase {
         }
     }
     
-    public Block setName(String name) {
-        GameRegistry.registerBlock(this, name);
-        setBlockName(name);                 
-        return this;
-    }
-
-    
     @Override
     public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plant) {
     	return true;
     }
 
-    /**
-     * Returns the ID of the items to drop on destruction.
-     */
     @Override
-    public Item getItemDropped(int par1, Random par2Random, int par3)
-    {
+    public Item getItemDropped(int par1, Random par2Random, int par3) {
         return BlockHelper.flylightDirt.getItemDropped(par1, par2Random, par3);
     }
-    
 }

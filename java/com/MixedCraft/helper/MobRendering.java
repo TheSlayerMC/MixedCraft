@@ -33,7 +33,7 @@ public class MobRendering {
         MinecraftForgeClient.registerItemRenderer(ItemHelper.Droid, new RenderDroidItem());
 		
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTable.class, new RenderTable());
-        MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockHelper.Table), new ItemTableRenderer());
+        MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockHelper.table), new ItemTableRenderer());
                 
         RenderingRegistry.registerEntityRenderingHandler(EntityLightningArrow.class, new RenderLightningArrow());
 		RenderingRegistry.registerEntityRenderingHandler(EntityTNTArrow.class, new RenderTNTArrow());

@@ -11,9 +11,8 @@ import com.MixedCraft.helper.BlocksBase;
 public abstract class BlockModContainer extends BlocksBase implements ITileEntityProvider
 {
 
-    protected BlockModContainer(Material p_i45386_1_)
-    {
-        super(p_i45386_1_);
+    protected BlockModContainer(Material p_i45386_1_, String name) {
+        super(p_i45386_1_, name);
         this.isBlockContainer = true;
     }
 

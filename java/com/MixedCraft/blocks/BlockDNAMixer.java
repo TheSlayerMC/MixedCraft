@@ -4,34 +4,28 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
 import com.MixedCraft.BlockHelper;
 import com.MixedCraft.MixedCraft;
+import com.MixedCraft.blocks.container.BlockModContainer;
 import com.MixedCraft.blocks.tileEntity.TileEntityDNAMixer;
-import com.MixedCraft.blocks.tileEntity.TileEntityDNAMixer;
-import com.MixedCraft.helper.ContainerBase;
-import com.MixedCraft.helper.Utils;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockDNAMixer extends ContainerBase {
+public class BlockDNAMixer extends BlockModContainer {
 
 	private Random furnaceRand = new Random();
 
 	private static boolean keepFurnaceInventory = true;
 
-	public BlockDNAMixer() {
-		super(Material.wood);
+	public BlockDNAMixer(String name) {
+		super(Material.wood, name);
 		setHardness(2.0F);
 		registerTexture("DNAMixer_Side", "DNAMixer_Top" , "DNAMixer_Bottom");
 	}
@@ -74,11 +68,11 @@ public class BlockDNAMixer extends ContainerBase {
 
 		if (par0)
 		{
-			par1World.setBlock(par2, par3, par4, BlockHelper.Mixer);
+			par1World.setBlock(par2, par3, par4, BlockHelper.mixer);
 		}
 		else
 		{
-			par1World.setBlock(par2, par3, par4, BlockHelper.Mixer);
+			par1World.setBlock(par2, par3, par4, BlockHelper.mixer);
 		}
 
 		keepFurnaceInventory = true;

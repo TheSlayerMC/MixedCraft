@@ -22,23 +22,21 @@ public class BiggerCraftingTable extends BlocksBase{
 	@SideOnly(Side.CLIENT)
 	private IIcon workbenchIIconFront;
 
-	public BiggerCraftingTable() {
-		super(Material.wood);
+	public BiggerCraftingTable(String name) {
+		super(Material.wood, name);
 		setStepSound(Block.soundTypeWood);
 	}
 
 	@SideOnly(Side.CLIENT)
-	public IIcon getIcon(int par1, int par2)
-	{
+	public IIcon getIcon(int par1, int par2) {
 		return par1 == 1 ? this.workbenchIIconTop : (par1 == 0 ? Blocks.planks.getBlockTextureFromSide(par1) : (par1 != 2 && par1 != 4 ? this.blockIcon : this.workbenchIIconFront));
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void registerBlockIcons(IIconRegister par1IIconRegister)
-	{
-		this.blockIcon = par1IIconRegister.registerIcon("MixedCraft:BigSide");
-		this.workbenchIIconTop = par1IIconRegister.registerIcon("MixedCraft:BigTop");
-		this.workbenchIIconFront = par1IIconRegister.registerIcon("MixedCraft:BigFront");
+	public void registerBlockIcons(IIconRegister par1IIconRegister) {
+		this.blockIcon = par1IIconRegister.registerIcon("MixedCraft:bigSide");
+		this.workbenchIIconTop = par1IIconRegister.registerIcon("MixedCraft:bigTop");
+		this.workbenchIIconFront = par1IIconRegister.registerIcon("MixedCraft:bigFront");
 	}
 
 	public boolean onBlockActivated(World var1, int var2, int var3, int var4, EntityPlayer player, int var6, float var7, float var8, float var9) {

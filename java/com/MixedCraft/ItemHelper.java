@@ -5,6 +5,7 @@ import net.minecraft.block.material.*;
 import net.minecraft.init.*;
 import net.minecraft.item.*;
 
+import com.MixedCraft.api.DNAKeys;
 import com.MixedCraft.armor.*;
 import com.MixedCraft.entity.*;
 import com.MixedCraft.handler.*;
@@ -92,12 +93,12 @@ public class ItemHelper extends HelperHandler{
 	public static final Item GoldHandsaw 						= new ItemsBase().setName("goldHandsaw");
 	public static final Item DiamondHandsaw 					= new ItemsBase().setName("diamondHandsaw");
 
-	public static final Item SilverSword 						= new SwordBase(Silver).setName("silverSword");
-	public static final Item SilverHoe 							= new HoeBase(Silver).setName("silverHoe");
-	public static final Item SilverShovel 						= new ShovelBase(Silver).setName("silverShovel");
-	public static final Item SilverPickaxe 						= new PickaxeBase(Silver).setName("silverPickaxe");
-	public static final Item SilverAxe 							= new AxeBase(Silver).setName("silverAxe");
-	public static final Item SilverShickaxe 					= new ToolShickaxe(SilverShick).setName("silverShickaxe");
+	public static final Item SilverSword 						= new ItemSwordBase(Silver).setName("silverSword");
+	public static final Item SilverHoe 							= new ItemHoeBase(Silver).setName("silverHoe");
+	public static final Item SilverShovel 						= new ItemShovelBase(Silver).setName("silverShovel");
+	public static final Item SilverPickaxe 						= new ItemPickaxeBase(Silver).setName("silverPickaxe");
+	public static final Item SilverAxe 							= new ItemAxeBase(Silver).setName("silverAxe");
+	public static final Item SilverShickaxe 					= new ItemToolShickaxe(SilverShick).setName("silverShickaxe");
 	public static final Item DiamondBigSword 					= new ItemBigSword(Diamond).setName("diamondBigSword");
 	public static final Item IronBigSword 						= new ItemBigSword(Iron).setName("ironBigSword");
 	public static final Item GoldBigSword 						= new ItemBigSword(Gold).setName("goldenBigSword");
@@ -134,5 +135,5 @@ public class ItemHelper extends HelperHandler{
 	
 	public static final Item batteryWeak 						= new ItemBattery(1500).setName("weakBattery");
 	public static final Item battery 							= new ItemBattery(3000).setName("battery");
-	public static final Item batteryStrong 						= new ItemBattery(5000).setName("strongBattery");	
+	public static final Item batteryStrong 						= new ItemBattery(6000).setName("strongBattery");	
 }

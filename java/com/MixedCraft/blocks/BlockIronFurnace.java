@@ -46,9 +46,9 @@ public class BlockIronFurnace extends BlockModContainer
     @SideOnly(Side.CLIENT)
     private IIcon IronFurnaceIIconFront;
 
-    public BlockIronFurnace(boolean par2)
+    public BlockIronFurnace(boolean par2, String name)
     {
-        super(Material.rock);
+        super(Material.rock, name);
         this.isActive = par2;
         setHardness(3.5F);
         setStepSound(Block.soundTypeMetal);
@@ -59,7 +59,7 @@ public class BlockIronFurnace extends BlockModContainer
      */
     public Item getItemDropped(int par1, Random par2Random, int par3)
     {
-        return Item.getItemFromBlock(BlockHelper.IronFurnaceOff);
+        return Item.getItemFromBlock(BlockHelper.ironFurnace);
     }
 
     /**
@@ -158,11 +158,11 @@ public class BlockIronFurnace extends BlockModContainer
 
         if (par0)
         {
-            par1World.setBlock(par2, par3, par4, BlockHelper.IronFurnaceOn);
+            par1World.setBlock(par2, par3, par4, BlockHelper.ironFurnaceOn);
         }
         else
         {
-            par1World.setBlock(par2, par3, par4, BlockHelper.IronFurnaceOff);
+            par1World.setBlock(par2, par3, par4, BlockHelper.ironFurnace);
         }
 
         keepIronFurnaceInventory = true;
@@ -333,6 +333,6 @@ public class BlockIronFurnace extends BlockModContainer
      */
     public Item getItem(World par1World, int par2, int par3, int par4)
     {
-        return Item.getItemFromBlock(BlockHelper.IronFurnaceOff);
+        return Item.getItemFromBlock(BlockHelper.ironFurnace);
     }
 }

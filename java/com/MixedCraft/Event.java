@@ -8,7 +8,7 @@ import net.minecraftforge.event.entity.EntityEvent.EntityConstructing;
 import net.minecraftforge.event.entity.player.BonemealEvent;
 import net.minecraftforge.event.world.BlockEvent.HarvestDropsEvent;
 
-import com.MixedCraft.blocks.FlylightSapling;
+import com.MixedCraft.blocks.BlockFlylightSapling;
 import com.MixedCraft.helper.ManaHelper;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -19,7 +19,7 @@ public class Event {
 	@SubscribeEvent
 	public void bonemealUsed(BonemealEvent event) {
 		if(event.world.getBlock(event.x, event.y, event.z) == BlockHelper.flylightSapling) {
-			((FlylightSapling)BlockHelper.flylightSapling).growTree(event.world, event.x, event.y, event.z, event.world.rand);
+			((BlockFlylightSapling)BlockHelper.flylightSapling).growTree(event.world, event.x, event.y, event.z, event.world.rand);
 		}
 	}
 

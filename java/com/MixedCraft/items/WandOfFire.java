@@ -1,5 +1,6 @@
 package com.MixedCraft.items;
 
+import com.MixedCraft.entity.Fireball;
 import com.MixedCraft.helper.ManaHelper;
 
 import net.minecraft.creativetab.CreativeTabs;

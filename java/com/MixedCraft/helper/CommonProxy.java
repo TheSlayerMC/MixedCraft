@@ -3,11 +3,11 @@ package com.MixedCraft.helper;
 import net.minecraftforge.common.MinecraftForge;
 
 import com.MixedCraft.AchievementEvent;
-import com.MixedCraft.Achievements;
 import com.MixedCraft.BlockHelper;
 import com.MixedCraft.ClientEvent;
 import com.MixedCraft.Event;
 import com.MixedCraft.ServerTickHandler;
+import com.MixedCraft.api.Achievements;
 import com.MixedCraft.blocks.tileEntity.TileEntityDNAAssembler;
 import com.MixedCraft.blocks.tileEntity.TileEntityDNAExtractor;
 import com.MixedCraft.blocks.tileEntity.TileEntityDNAMixer;
@@ -25,7 +25,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class CommonProxy extends HelperHandler {
+public class CommonProxy {
 
 	public void registerRenderInformation() {}    
 
